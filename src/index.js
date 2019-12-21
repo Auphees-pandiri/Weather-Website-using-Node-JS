@@ -34,7 +34,7 @@ app.get('/about',(req,res)=>{
 app.get('/help',(req,res)=>{
     res.render('help',{
         title:'Help',
-        message:"we can help you",
+        message:"I can help you",
         name:"aphees"
     })
 })
