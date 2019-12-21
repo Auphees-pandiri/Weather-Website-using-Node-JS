@@ -7,7 +7,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app=express()
-const port=3000;
+const port= process.env.PORT || 3000;
 
 //Path for Views of template engine and partials of template of engines
 app.set('view engine','hbs')
@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname,'../public')))
 
 app.get('',(req,res)=>{
     res.render('index',{
-        title:'Weather App',
+        title:'Weather Forecating App',
         name:'aphees'
     })
 })
