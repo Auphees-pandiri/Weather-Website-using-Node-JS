@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <link>
+        <title>Main page</title>
+        <link rel="icon" href="img/weather.png"></link>
+        <link rel='stylesheet' href="css/styles.css"></link>
+        
+    </head>
+    <body>
+        <div class="main-content">
+             {{>header}}
+            <h5>Use this site to get the information about Weather.</h5>
+
+            <form>
+                <input placeholder="Enter location">
+                <button>Search</button>
+            </form>
+
+            <h3 id="message1" style="color: #2da1b6;"></h3>
+            <h3 id="message2" style="color: #2da1b6;"></h3>
+
+
+        </div>
+       
+        {{>footer}}
+
+        <script src="js/sample.js"></script>
+    </body>
+</html>
