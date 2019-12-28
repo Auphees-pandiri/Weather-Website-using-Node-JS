@@ -1,29 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <link>
-        <title>Main page</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather app</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1" >
         <link rel="icon" href="img/weather.png"></link>
-        <link rel='stylesheet' href="css/styles.css"></link>
-        
+        <link rel = "stylesheet" href = "//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+			  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+			  crossorigin="anonymous"></script>
+        <style type="text/css">
+            .main-footer{
+	            background:#f5f5f5;
+	            padding:50px;
+            }
+
+            .main-footer{
+	            background-color: #313461;
+	            color: aliceblue;
+            }
+        </style>
     </head>
     <body>
-        <div class="main-content">
-             {{>header}}
-            <h5>Use this site to get the information about Weather.</h5>
-
-            <form>
-                <input placeholder="Enter location">
-                <button>Search</button>
-            </form>
-
-            <h3 id="message1" style="color: #2da1b6;"></h3>
-            <h3 id="message2" style="color: #2da1b6;"></h3>
-
-
+        {{>header}}
+        
+        <div class="jumbotron jumbotron-fluid text-center" style="background-color: #055">
+                <div>
+                    <h1 class="display-3 text-white">{{title}}</h1>
+                    <p class="text-white-50">Use this site to get the information about Weather.</p>
+                    <a class="btn btn-lg btn-primary" href="/about" role="button">Know About Me &raquo;</a>
+                </div>
         </div>
-       
-        {{>footer}}
 
+		<div id="demo_car" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo_car" data-slide-to="0" class="active"></li>
+                <li data-target="#demo_car" data-slide-to="1"></li>
+                <li data-target="#demo_car" data-slide-to="2"></li>
+            </ul>
+		    <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="img/pic2.jpg" class="img-fluid" alt="Los Angeles" width="100%" height="700">
+                <div class="carousel-caption" style="padding-bottom: 200px;">
+        		<h2 style="color: #050217;">Find Weather forecasting Information For Your Location </h2>
+      		  </div>
+                </div>
+                <div class="carousel-item">
+                <img src="img/pic3.jpg" class="img-fluid" alt="Chicago" width="100%" height="700">
+                </div>
+                <div class="carousel-item">
+                <img src="img/pic4.jpg" class="img-fluid" alt="New York" width="100%" height="700">
+                </div>
+            </div>
+		  <!-- Left and right controls -->
+		  <a class="carousel-control-prev" href="#demo_car" data-slide="prev">
+		    <span class="carousel-control-prev-icon"></span>
+		  </a>
+		  <a class="carousel-control-next" href="#demo_car" data-slide="next">
+		    <span class="carousel-control-next-icon"></span>
+		  </a>
+		</div>
+        <div class="conatiner pt-3">
+            <div class="card">
+                <div class="card-header" style="background-color:#227185;"><h2 class="text-white">Enter the Location to find the weather forecasting information</h2></div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label><span class="badge badge-primary">Location</span></label>
+                            <input type="text" class="form-control" placeholder="Enter location">
+                        </div>
+                        <button class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <blockquote class="blockquote">
+					    <i><h3 style="color: #c42912;" id="message1"></h3></i>
+		            </blockquote>
+                    <blockquote class="blockquote">
+                        <i><h3 style="color: #c42912;" id="message2"></h3></i>
+                    </blockquote>  
+                </div>
+            </div>
+        </div>
+        {{>footer}}
         <script src="js/sample.js"></script>
     </body>
 </html>
